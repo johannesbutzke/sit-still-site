@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sit Still — Focus Timer for iPhone</title>
+<meta name="description" content="Sit Still is a focus timer built around nineteen illustrated rooms. Support, FAQ and privacy policy.">
+<meta property="og:title" content="Sit Still — A quiet room to focus in">
+<meta property="og:description" content="A focus timer built around nineteen illustrated rooms, each with its own sound. For iPhone.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈</text></svg>">
+<style>
+  :root{
+    --paper:#faf6ef; --ink:#2f2a26; --muted:#6b625a;
+    --terracotta:#b5654a; --rule:#e0d6c8; --card:#fffdf9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1c1917; --ink:#ece5da; --muted:#a49a8e;
+           --terracotta:#d08a6e; --rule:#3a342e; --card:#232019; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:0 20px;
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:64px 0 96px}
+  h1{
+    font-family:Georgia,"Times New Roman",serif; font-weight:400;
+    font-size:2.8rem; letter-spacing:-.01em; margin:0 0 .15em;
+  }
+  h2{
+    font-family:Georgia,serif; font-weight:400; font-size:1.5rem;
+    margin:2.6em 0 .6em; padding-top:1.4em; border-top:1px solid var(--rule);
+    scroll-margin-top:24px;
+  }
+  h3{font-size:1.05rem;margin:1.8em 0 .4em}
+  .lede{color:var(--muted);font-size:1.15rem;margin:0 0 1.6em}
+  a{color:var(--terracotta)}
+  nav{margin:0 0 3.2em;font-size:.95rem}
+  nav a{margin-right:1.2em;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+  nav a:hover{border-bottom-color:var(--terracotta)}
+  ul{padding-left:1.2em}
+  li{margin:.4em 0}
+  .card{
+    background:var(--card); border:1px solid var(--rule); border-radius:10px;
+    padding:20px 24px; margin:1.6em 0;
+  }
+  .card p:first-child{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+  .feature{margin:1.6em 0}
+  .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
+  .feature p{margin:0;color:var(--muted)}
+  .meta{color:var(--muted);font-size:.95rem}
+  footer{
+    margin-top:5em; padding-top:1.5em; border-top:1px solid var(--rule);
+    color:var(--muted); font-size:.9rem;
+  }
+  footer a{color:var(--muted)}
+  code{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1px 5px;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Sit Still</h1>
+  <p class="lede">A quiet room to focus in.</p>
+  <nav>
+    <a href="#about">The app</a>
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy</a>
+    <a href="mailto:sitstillapp@gmail.com">Contact</a>
+  </nav>
+
+  <h2 id="about">A focus timer built around rooms</h2>
+
+  <p>Set a length, pick a room, and stay in it. The room fills the screen — a tea
+  house in Kyoto, an attic in Paris, a library in Vienna — with its own sound
+  playing underneath and a cat asleep somewhere in it. When the time is up you
+  get a few whiskers and a line to write down what you actually did.</p>
+
+  <div class="feature">
+    <h3>Nineteen illustrated rooms</h3>
+    <p>Seventeen permanent ones, free and open from the first launch, plus two
+    seasonal rooms that change every month. Each has its own recorded ambience,
+    levelled so moving between rooms is never a lurch.</p>
+  </div>
+
+  <div class="feature">
+    <h3>A focus shield, if you want one</h3>
+    <p>Three modes: Companionship blocks nothing, Whitelist lets a chosen set of
+    apps through, Strict blocks everything for the length of the session. Built on
+    Apple's own Screen Time frameworks.</p>
+  </div>
+
+  <div class="feature">
+    <h3>A bedtime lock</h3>
+    <p>Choose a window and the same shield comes up on a schedule, so the phone
+    stops being interesting at the hour you decided rather than the hour you
+    give in.</p>
+  </div>
+
+  <div class="feature">
+    <h3>Tasks, and a record</h3>
+    <p>A task list that syncs both ways with Apple Reminders if you want it to,
+    and a plain chart of what you have actually sat through.</p>
+  </div>
+
+  <div class="feature">
+    <h3>Cats</h3>
+    <p>Six companions, all free, picked on taste rather than earned. Focusing
+    pays whiskers, and whiskers buy the seasonal rooms and things for the cat to
+    wear. Nothing else costs anything.</p>
+  </div>
+
+  <p class="meta">Sit Still is for iPhone and requires iOS 17 or later. There is
+  no account, no sign-in, and it works with no connection at all.</p>
+
+  <h2 id="support">Support</h2>
+
+  <div class="card">
+    <p><strong>Something wrong, or an idea?</strong> Email
+    <a href="mailto:sitstillapp@gmail.com">sitstillapp@gmail.com</a>.
+    Settings&nbsp;→&nbsp;About&nbsp;→&nbsp;Send feedback opens the same address with your
+    version, build, iOS version and device model already filled in, which makes
+    anything reproducible much faster to fix. Expect a reply within a few days.</p>
+  </div>
+
+  <h3>The room stops playing when I lock the screen</h3>
+  <p>Sound has to be on for a session to keep running in the background. With
+  room sound switched off, iOS suspends the app, and a countdown will not finish
+  or chime until you open it again. Settings&nbsp;→&nbsp;The room has the switch.</p>
+
+  <h3>The room sound stops my music</h3>
+  <p>It shouldn't — room sound is mixed under whatever else is playing rather
+  than interrupting it, and it ignores the ring/silent switch. If it is louder
+  than you want it under music, Settings&nbsp;→&nbsp;The room has a volume slider
+  and a Listen button.</p>
+
+  <h3>Blocked apps aren't being blocked</h3>
+  <p>Check Settings&nbsp;→&nbsp;Focus shield: Companionship is the default and
+  blocks nothing. Whitelist and Strict both need Screen Time access, which iOS
+  asks for the first time you pick one. Screen Time cannot shield some system
+  apps, and it quietly stops working past 50 chosen apps or websites.</p>
+
+  <h3>Apps are still blocked and no session is running</h3>
+  <p>Open Sit Still. A shield is a system setting rather than something the app
+  holds open, so it survives a force-quit — and opening the app clears any shield
+  with no session behind it. If you have deleted the app while a shield was up,
+  reinstall it, open it once, and the shield comes down.</p>
+
+  <h3>The bedtime lock never fires</h3>
+  <p>iOS refuses to monitor a window shorter than 15 minutes, and the start and
+  end callbacks only arrive while the device is in use — a phone face-down at
+  22:30 gets its lock when it is next picked up.</p>
+
+  <h3>My tasks and Reminders disagree</h3>
+  <p>The reminder wins on any conflict. Scope is Sit Still's own Reminders list
+  plus reminders you deliberately linked; a reminder added to another list is not
+  picked up. Deleting travels both ways — deleting a task deletes its reminder,
+  and vice versa.</p>
+
+  <h3>I left a session by accident and lost the time</h3>
+  <p>Leaving takes a deliberate 1.3-second hold precisely so it doesn't happen by
+  accident, and time left that way is not banked. Finishing early is different:
+  an open-ended session, or a countdown paused past the first minute, banks what
+  you did sit through.</p>
+
+  <h3>How do I earn whiskers, and what are they for?</h3>
+  <p>Two per minute of a completed session, with a bonus past half an hour, and
+  roughly a one-in-four chance that an accessory you don't own turns up instead.
+  They buy the two seasonal rooms of the month and things for the cat to wear.
+  Every permanent room and every cat is free.</p>
+
+  <h3>A seasonal room disappeared</h3>
+  <p>Seasonal rooms rotate at the end of the month. One bought with whiskers
+  stays yours; the ones you didn't buy are replaced by the next two.</p>
+
+  <h3>Saving a room as wallpaper does nothing</h3>
+  <p>Settings&nbsp;→&nbsp;The room&nbsp;→&nbsp;Save room as wallpaper needs
+  permission to add to Photos, which iOS asks for once. If it was declined, turn
+  it back on in the iPhone's Settings&nbsp;→&nbsp;Privacy &amp; Security&nbsp;→&nbsp;Photos.
+  The app can add images and cannot read your library.</p>
+
+  <h3>How do I delete my data?</h3>
+  <p>Delete the app. Everything Sit Still knows lives on the device and goes with
+  it — there is no account and no copy anywhere else.</p>
+
+  <h2 id="privacy">Privacy Policy</h2>
+  <p class="meta">Last updated 24 August 2026.</p>
+
+  <div class="card">
+    <p><strong>Sit Still collects nothing.</strong> It has no account, no sign-in
+    and no server. Nothing you do in the app is transmitted anywhere, because
+    there is nowhere for it to go.</p>
+  </div>
+
+  <h3>What stays on your device</h3>
+  <ul>
+    <li>Your sessions, tasks, notes, whiskers balance, cats and accessories.</li>
+    <li>Your settings, including the focus shield mode and bedtime schedule.</li>
+    <li>The apps you chose to shield. These come back from Apple's own picker as
+      opaque tokens the app cannot read or resolve into names, and are stored in a
+      shared container on the device only.</li>
+  </ul>
+  <p>All of it lives in the app's own storage on your iPhone. Deleting the app
+  deletes all of it.</p>
+
+  <h3>Screen Time</h3>
+  <p>Sit Still uses Apple's Screen Time frameworks (FamilyControls,
+  ManagedSettings, DeviceActivity) to shield apps during a session and during a
+  bedtime window you set. It reads no Screen Time usage data — not which apps you
+  open, not for how long, not how often. It only raises and lowers shields you
+  asked for, on the device they were asked for.</p>
+
+  <h3>Reminders</h3>
+  <p>With Reminders sync switched on, the app reads and writes its own Reminders
+  list, plus any individual reminder you deliberately linked. That happens through
+  Apple's EventKit on your device. Nothing is copied off it.</p>
+
+  <h3>Photos</h3>
+  <p>Save room as wallpaper writes one image to your photo library when you tap
+  it. The permission is add-only: the app cannot read your library.</p>
+
+  <h3>Feedback email</h3>
+  <p>Sending feedback opens your own mail app with a message you can read and
+  edit before sending. If you send it, that email reaches
+  sitstillapp@gmail.com and nowhere else. Not sending it means nothing is
+  transmitted at all.</p>
+
+  <h3>Analytics, ads and third parties</h3>
+  <p>There are none. The app contains no analytics SDK, no advertising SDK, no
+  crash reporter and no third-party code of any kind. Nothing is sold, shared or
+  profiled, because nothing is collected.</p>
+  <p>Apple may collect its own aggregate, anonymised statistics about App Store
+  downloads and crashes under its own privacy policy. Those never reach the
+  developer as anything identifying you.</p>
+
+  <h3>Children</h3>
+  <p>Sit Still is rated 4+ and safe for any age, but it is not directed at
+  children and knowingly collects no information from anyone, of any age.</p>
+
+  <h3>Changes</h3>
+  <p>If a future version ever collects anything, this page will say so before
+  that version ships, and the App Store privacy label will be updated to match.</p>
+
+  <h3>Contact</h3>
+  <p>Johannes Butzke —
+  <a href="mailto:sitstillapp@gmail.com">sitstillapp@gmail.com</a></p>
+
+  <footer>
+    Sit Still for iPhone. © 2026 Johannes Butzke.
+    <a href="#support">Support</a> ·
+    <a href="#privacy">Privacy</a>
+  </footer>
+
+</div>
+</body>
+</html>
