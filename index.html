@@ -4,117 +4,252 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Altera Apps</title>
-<meta name="description" content="Altera Apps builds small, quiet apps for iPhone. No accounts, no tracking, no dark patterns.">
+<meta name="description" content="Altera Apps is an independent studio building small, quiet apps for iPhone. No accounts, no tracking, no subscriptions.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08080b">
 <meta property="og:title" content="Altera Apps">
 <meta property="og:description" content="Small, quiet apps for iPhone.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127807;</text></svg>">
+<meta property="og:url" content="https://alteraapps.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf6'/%3E%3Cstop offset='1' stop-color='%23d08a6e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0f'/%3E%3Crect x='6.5' y='6.5' width='19' height='19' rx='6' fill='none' stroke='url(%23g)' stroke-width='1.8'/%3E%3Ccircle cx='16' cy='16' r='4' fill='url(%23g)'/%3E%3C/svg%3E">
 <style>
   :root{
-    --paper:#faf6ef; --ink:#2f2a26; --muted:#6b625a;
-    --terracotta:#b5654a; --rule:#e0d6c8; --card:#fffdf9;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --paper:#1c1917; --ink:#ece5da; --muted:#a49a8e;
-           --terracotta:#d08a6e; --rule:#3a342e; --card:#232019; }
+    --bg:#08080b;
+    --ink:#eceaf3;
+    --muted:#9b98ab;
+    --dim:#6e6b7d;
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.20);
+    --violet:#8b7cf6;
+    --terracotta:#d08a6e;
+    --shell:min(1080px,100% - 48px);
   }
   *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
   body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    padding:0 20px;
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-feature-settings:"cv02","cv03","cv04","ss01";
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    overflow-x:hidden;
   }
-  .wrap{max-width:660px;margin:0 auto;padding:40px 0 96px}
-  .crumb{font-size:.9rem;margin:0 0 2.4em;color:var(--muted)}
-  .crumb a{color:var(--muted);text-decoration:none}
-  .crumb a:hover{color:var(--terracotta)}
+  /* atmosphere */
+  .glow{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(58rem 34rem at 12% -12%, rgba(139,124,246,.20), transparent 62%),
+      radial-gradient(42rem 28rem at 96% -6%, rgba(208,138,110,.12), transparent 60%),
+      radial-gradient(50rem 40rem at 50% 118%, rgba(139,124,246,.07), transparent 65%);
+  }
+  .grain{
+    position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.032;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .page{position:relative; z-index:2; width:var(--shell); margin:0 auto}
+
+  a{color:inherit}
+  ::selection{background:rgba(139,124,246,.35)}
+  :focus-visible{outline:2px solid var(--violet); outline-offset:3px; border-radius:4px}
+
+  /* header */
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 0; gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+  .brand span{
+    font-size:.82rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink);
+  }
+  .brand svg{display:block; flex:none}
+  header a.mail{
+    font-size:.86rem; color:var(--muted); text-decoration:none;
+    border:1px solid var(--line); border-radius:999px; padding:7px 15px;
+    transition:border-color .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  header a.mail:hover{border-color:var(--line-strong); color:var(--ink)}
+
+  /* hero */
+  .hero{padding:clamp(56px,11vw,128px) 0 clamp(48px,8vw,88px)}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:.76rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 24px;
+  }
+  .eyebrow i{
+    width:6px; height:6px; border-radius:50%; background:var(--violet);
+    box-shadow:0 0 12px 2px rgba(139,124,246,.65); font-style:normal;
+  }
   h1{
-    font-family:Georgia,"Times New Roman",serif; font-weight:400;
-    font-size:2.6rem; letter-spacing:-.01em; margin:0 0 .15em;
+    font-size:clamp(2.7rem,7.4vw,4.6rem); line-height:1.01;
+    letter-spacing:-.038em; font-weight:600; margin:0;
+    background:linear-gradient(168deg,#fbfaff 18%,#a9a4c4 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    max-width:15ch;
   }
-  h2{
-    font-family:Georgia,serif; font-weight:400; font-size:1.45rem;
-    margin:2.6em 0 .6em; padding-top:1.4em; border-top:1px solid var(--rule);
+  .lede{
+    color:var(--muted); font-size:clamp(1.02rem,1.6vw,1.16rem);
+    line-height:1.62; margin:26px 0 0; max-width:52ch;
   }
-  h3{font-size:1.05rem;margin:1.8em 0 .4em}
-  .lede{color:var(--muted);font-size:1.15rem;margin:0 0 1.8em}
-  a{color:var(--terracotta)}
-  ul{padding-left:1.2em}
-  li{margin:.4em 0}
+  .pills{display:flex; flex-wrap:wrap; gap:8px; margin:34px 0 0}
+  .pill{
+    border:1px solid var(--line); border-radius:999px;
+    padding:7px 15px; font-size:.83rem; color:var(--muted);
+    background:rgba(255,255,255,.018);
+  }
+
+  /* sections */
+  .rule{height:1px; border:0; margin:0;
+    background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent)}
+  .label{
+    font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--dim); margin:0 0 22px;
+  }
+  section{padding:clamp(48px,7vw,76px) 0}
+
+  /* app cards */
+  .grid{display:grid; gap:16px; grid-template-columns:1fr}
+  @media (min-width:760px){ .grid{grid-template-columns:1.35fr 1fr} }
   .card{
-    background:var(--card); border:1px solid var(--rule); border-radius:10px;
-    padding:20px 24px; margin:1.6em 0;
+    position:relative; display:block; text-decoration:none; color:inherit;
+    border:1px solid var(--line); border-radius:18px;
+    padding:30px 30px 28px;
+    background:linear-gradient(180deg,rgba(255,255,255,.042),rgba(255,255,255,.012));
+    transition:border-color .22s ease, transform .22s ease, background .22s ease;
+    overflow:hidden;
   }
-  .card p:first-child{margin-top:0}
-  .card p:last-child{margin-bottom:0}
-  .feature{margin:1.6em 0}
-  .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
-  .feature p{margin:0;color:var(--muted)}
-  .meta{color:var(--muted);font-size:.95rem}
-  .links{display:flex;flex-wrap:wrap;gap:12px;margin:1.6em 0}
-  .links a{
-    display:block;flex:1 1 200px;background:var(--card);border:1px solid var(--rule);
-    border-radius:10px;padding:16px 20px;text-decoration:none;color:inherit;
-    transition:border-color .15s ease;
+  .card::after{
+    content:""; position:absolute; inset:-1px; border-radius:inherit;
+    background:radial-gradient(22rem 12rem at 20% 0%,rgba(208,138,110,.16),transparent 70%);
+    opacity:0; transition:opacity .22s ease; pointer-events:none;
   }
-  .links a:hover{border-color:var(--terracotta)}
-  .links strong{display:block;color:var(--terracotta);font-weight:400;
-    font-family:Georgia,serif;font-size:1.12rem;margin-bottom:.15em}
-  .links span{color:var(--muted);font-size:.92rem}
-  .app{
-    display:block; background:var(--card); border:1px solid var(--rule);
-    border-radius:10px; padding:22px 24px; margin:1.2em 0;
-    text-decoration:none; color:inherit; transition:border-color .15s ease;
+  .card:hover{border-color:var(--line-strong); transform:translateY(-3px)}
+  .card:hover::after{opacity:1}
+  .card .top{display:flex; align-items:center; gap:10px; margin-bottom:16px}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--terracotta);
+    box-shadow:0 0 14px 2px rgba(208,138,110,.5); flex:none}
+  .card h2{
+    font-size:1.45rem; font-weight:600; letter-spacing:-.02em; margin:0;
   }
-  .app:hover{border-color:var(--terracotta)}
-  .app h3{font-family:Georgia,serif;font-weight:400;font-size:1.3rem;
-    margin:0 0 .1em;color:var(--terracotta)}
-  .app .sub{color:var(--ink);margin:0 0 .5em;font-size:1.02rem}
-  .app p.body{color:var(--muted);margin:0;font-size:.97rem}
-  .app .more{display:inline-block;margin-top:.9em;font-size:.9rem;color:var(--terracotta)}
-  .soon{border:1px dashed var(--rule);border-radius:10px;padding:18px 24px;
-    color:var(--muted);font-size:.95rem;margin:1.2em 0}
+  .card .tag{color:var(--ink); opacity:.86; margin:0 0 12px; font-size:1rem}
+  .card p{color:var(--muted); margin:0; font-size:.96rem; line-height:1.62}
+  .more{
+    display:inline-flex; align-items:center; gap:7px; margin-top:22px;
+    font-size:.9rem; color:var(--ink);
+  }
+  .more i{font-style:normal; transition:transform .22s ease; display:inline-block}
+  .card:hover .more i{transform:translateX(4px)}
+  .ghost{
+    border:1px dashed var(--line); border-radius:18px; padding:30px;
+    color:var(--dim); font-size:.94rem; line-height:1.62;
+    display:flex; align-items:center;
+  }
+
+  /* contact */
+  .contact{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px}
+  .contact a.big{
+    font-size:clamp(1.3rem,3.4vw,1.9rem); letter-spacing:-.02em; font-weight:500;
+    text-decoration:none; color:var(--ink);
+    border-bottom:1px solid var(--line-strong); padding-bottom:3px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .contact a.big:hover{border-color:var(--violet); color:#fff}
+  .contact span{color:var(--muted); font-size:.96rem}
+
+  /* footer */
   footer{
-    margin-top:5em; padding-top:1.5em; border-top:1px solid var(--rule);
-    color:var(--muted); font-size:.9rem;
+    border-top:1px solid var(--line); padding:28px 0 56px;
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 22px;
+    color:var(--dim); font-size:.86rem;
   }
-  footer a{color:var(--muted)}
+  footer nav{display:flex; gap:20px; flex-wrap:wrap}
+  footer a{color:var(--dim); text-decoration:none; transition:color .18s ease}
+  footer a:hover{color:var(--ink)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="glow"></div>
+<div class="grain"></div>
 
-  <h1>Altera Apps</h1>
-  <p class="lede">Small, quiet apps for iPhone.</p>
+<div class="page">
 
-  <p>Altera Apps is a one-person studio. The work is aimed at software that is
-  calm to use and honest about what it does: no accounts to make, nothing
-  tracked, nothing sold, and no subscription for things that should never have
-  been subscriptions.</p>
+  <header>
+    <a class="brand" href="/" aria-label="Altera Apps home">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+        <defs><linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#d08a6e"/>
+        </linearGradient></defs>
+        <rect x="5" y="5" width="22" height="22" rx="7" fill="none" stroke="url(#m)" stroke-width="1.8"/>
+        <circle cx="16" cy="16" r="4.4" fill="url(#m)"/>
+      </svg>
+      <span>Altera Apps</span>
+    </a>
+    <a class="mail" href="mailto:sitstillapp@gmail.com">Get in touch</a>
+  </header>
 
-  <h2>Apps</h2>
+  <div class="hero">
+    <p class="eyebrow"><i></i> Independent iOS studio</p>
+    <h1>Small, quiet apps for iPhone.</h1>
+    <p class="lede">A one-person studio making software that is calm to use and
+    honest about what it does. Nothing to sign up for, nothing tracked, nothing
+    sold &mdash; and no subscription for things that should never have been
+    subscriptions.</p>
+    <div class="pills">
+      <span class="pill">No accounts</span>
+      <span class="pill">No tracking</span>
+      <span class="pill">No subscriptions</span>
+      <span class="pill">Works offline</span>
+    </div>
+  </div>
 
-  <a class="app" href="sit-still/">
-    <h3>Sit Still</h3>
-    <p class="sub">A quiet room to focus in.</p>
-    <p class="body">A focus timer built around nineteen illustrated rooms, each
-    with its own recorded ambience and a cat asleep somewhere in it. Blocks what
-    you ask it to block, keeps a record of what you actually sat through, and
-    keeps all of it on your phone.</p>
-    <span class="more">Read more &rarr;</span>
-  </a>
+  <hr class="rule">
 
-  <div class="soon">More on the way. Each app gets its own page here, with its
-  own support notes and privacy policy.</div>
+  <section>
+    <p class="label">Apps</p>
+    <div class="grid">
 
-  <h2>Contact</h2>
-  <p><a href="mailto:sitstillapp@gmail.com">sitstillapp@gmail.com</a> &mdash;
-  bug reports, questions and ideas are all welcome, and all read.</p>
+      <a class="card" href="sit-still/">
+        <div class="top">
+          <span class="dot"></span>
+          <h2>Sit Still</h2>
+        </div>
+        <p class="tag">A quiet room to focus in.</p>
+        <p>A focus timer built around nineteen illustrated rooms, each with its
+        own recorded ambience and a cat asleep somewhere in it. It blocks what
+        you ask it to block, keeps a record of what you actually sat through,
+        and keeps every bit of it on your phone.</p>
+        <span class="more">Read more <i>&rarr;</i></span>
+      </a>
+
+      <div class="ghost">More on the way. Each app gets its own page here, with
+      its own support notes and privacy policy.</div>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <p class="label">Contact</p>
+    <div class="contact">
+      <a class="big" href="mailto:sitstillapp@gmail.com">sitstillapp@gmail.com</a>
+      <span>Bug reports, questions and ideas are all welcome, and all read.</span>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2026 Altera Apps.
-    <a href="sit-still/support/">Support</a> &middot;
-    <a href="sit-still/privacy/">Privacy</a>
+    <span>&copy; 2026 Altera Apps</span>
+    <nav>
+      <a href="sit-still/">Sit Still</a>
+      <a href="sit-still/support/">Support</a>
+      <a href="sit-still/privacy/">Privacy</a>
+    </nav>
   </footer>
 
 </div>
