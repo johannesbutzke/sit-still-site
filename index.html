@@ -8,7 +8,7 @@
 <meta property="og:title" content="Altera Apps">
 <meta property="og:description" content="Small, quiet apps for iPhone.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127807;</text></svg>">
 <style>
   :root{
     --paper:#faf6ef; --ink:#2f2a26; --muted:#6b625a;
@@ -19,41 +19,61 @@
            --terracotta:#d08a6e; --rule:#3a342e; --card:#232019; }
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--paper); color:var(--ink);
     font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     padding:0 20px;
   }
-  .wrap{max-width:660px;margin:0 auto;padding:72px 0 96px}
+  .wrap{max-width:660px;margin:0 auto;padding:40px 0 96px}
+  .crumb{font-size:.9rem;margin:0 0 2.4em;color:var(--muted)}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--terracotta)}
   h1{
     font-family:Georgia,"Times New Roman",serif; font-weight:400;
     font-size:2.6rem; letter-spacing:-.01em; margin:0 0 .15em;
   }
   h2{
-    font-family:Georgia,serif; font-weight:400; font-size:1.4rem;
-    margin:3em 0 .8em; padding-top:1.4em; border-top:1px solid var(--rule);
-    scroll-margin-top:24px;
+    font-family:Georgia,serif; font-weight:400; font-size:1.45rem;
+    margin:2.6em 0 .6em; padding-top:1.4em; border-top:1px solid var(--rule);
   }
-  .lede{color:var(--muted);font-size:1.15rem;margin:0 0 2em}
+  h3{font-size:1.05rem;margin:1.8em 0 .4em}
+  .lede{color:var(--muted);font-size:1.15rem;margin:0 0 1.8em}
   a{color:var(--terracotta)}
+  ul{padding-left:1.2em}
+  li{margin:.4em 0}
+  .card{
+    background:var(--card); border:1px solid var(--rule); border-radius:10px;
+    padding:20px 24px; margin:1.6em 0;
+  }
+  .card p:first-child{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+  .feature{margin:1.6em 0}
+  .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
+  .feature p{margin:0;color:var(--muted)}
+  .meta{color:var(--muted);font-size:.95rem}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin:1.6em 0}
+  .links a{
+    display:block;flex:1 1 200px;background:var(--card);border:1px solid var(--rule);
+    border-radius:10px;padding:16px 20px;text-decoration:none;color:inherit;
+    transition:border-color .15s ease;
+  }
+  .links a:hover{border-color:var(--terracotta)}
+  .links strong{display:block;color:var(--terracotta);font-weight:400;
+    font-family:Georgia,serif;font-size:1.12rem;margin-bottom:.15em}
+  .links span{color:var(--muted);font-size:.92rem}
   .app{
     display:block; background:var(--card); border:1px solid var(--rule);
     border-radius:10px; padding:22px 24px; margin:1.2em 0;
     text-decoration:none; color:inherit; transition:border-color .15s ease;
   }
   .app:hover{border-color:var(--terracotta)}
-  .app h3{
-    font-family:Georgia,serif; font-weight:400; font-size:1.3rem;
-    margin:0 0 .1em; color:var(--terracotta);
-  }
+  .app h3{font-family:Georgia,serif;font-weight:400;font-size:1.3rem;
+    margin:0 0 .1em;color:var(--terracotta)}
   .app .sub{color:var(--ink);margin:0 0 .5em;font-size:1.02rem}
   .app p.body{color:var(--muted);margin:0;font-size:.97rem}
   .app .more{display:inline-block;margin-top:.9em;font-size:.9rem;color:var(--terracotta)}
-  .soon{
-    border:1px dashed var(--rule); border-radius:10px; padding:18px 24px;
-    color:var(--muted); font-size:.95rem; margin:1.2em 0;
-  }
+  .soon{border:1px dashed var(--rule);border-radius:10px;padding:18px 24px;
+    color:var(--muted);font-size:.95rem;margin:1.2em 0}
   footer{
     margin-top:5em; padding-top:1.5em; border-top:1px solid var(--rule);
     color:var(--muted); font-size:.9rem;
@@ -72,7 +92,7 @@
   tracked, nothing sold, and no subscription for things that should never have
   been subscriptions.</p>
 
-  <h2 id="apps">Apps</h2>
+  <h2>Apps</h2>
 
   <a class="app" href="sit-still/">
     <h3>Sit Still</h3>
@@ -81,21 +101,21 @@
     with its own recorded ambience and a cat asleep somewhere in it. Blocks what
     you ask it to block, keeps a record of what you actually sat through, and
     keeps all of it on your phone.</p>
-    <span class="more">Support, privacy and more →</span>
+    <span class="more">Read more &rarr;</span>
   </a>
 
   <div class="soon">More on the way. Each app gets its own page here, with its
-  support notes and privacy policy.</div>
+  own support notes and privacy policy.</div>
 
-  <h2 id="contact">Contact</h2>
-  <p>Johannes Butzke —
+  <h2>Contact</h2>
+  <p>Johannes Butzke &mdash;
   <a href="mailto:sitstillapp@gmail.com">sitstillapp@gmail.com</a>.
   Bug reports, questions and ideas are all welcome, and all read.</p>
 
   <footer>
-    © 2026 Altera Apps.
-    <a href="sit-still/#privacy">Privacy</a> ·
-    <a href="sit-still/#support">Support</a>
+    &copy; 2026 Altera Apps.
+    <a href="sit-still/support/">Support</a> &middot;
+    <a href="sit-still/privacy/">Privacy</a>
   </footer>
 
 </div>
