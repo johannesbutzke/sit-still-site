@@ -67,25 +67,41 @@
   }
   footer a{color:var(--muted)}
 
-  .stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:2.2em 0 0}
+  /* align-items:flex-start, not center: only one store carries a caption
+     underneath, and centring would push the live badge down to meet it. */
+  .stores{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;margin:2.2em 0 0}
+  .store{display:flex;flex-direction:column}
   .badge{
     display:inline-flex;align-items:center;gap:11px;
     background:var(--ink);color:var(--paper);
     border-radius:10px;padding:10px 18px;min-width:178px;
-    opacity:.45;user-select:none;
+    user-select:none;
   }
+  /* The dimming belongs to the store that isn't out yet, not to the shape. */
+  .badge--soon{opacity:.45}
+  a.badge{
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  }
+  a.badge:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.16)}
+  a.badge:active{transform:translateY(0);box-shadow:none}
+  a.badge:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
   .badge svg{flex:none}
   .badge .txt{display:flex;flex-direction:column;line-height:1.18}
   .badge .small{font-size:.62rem;letter-spacing:.01em}
   .badge .big{font-size:1.05rem;font-weight:500;letter-spacing:-.015em}
   p.soon{
     display:flex;align-items:center;gap:8px;
-    color:var(--muted);font-size:.92rem;margin:.95em 0 0;
+    color:var(--muted);font-size:.92rem;margin:.7em 0 0;
     border:0;padding:0;background:none;
   }
   p.soon::before{
     content:"";width:6px;height:6px;border-radius:50%;flex:none;
     background:var(--terracotta);
+  }
+  @media (prefers-reduced-motion: reduce){
+    a.badge{transition:none}
+    a.badge:hover{transform:none}
   }
 </style>
 </head>
@@ -103,7 +119,9 @@
   get a few whiskers and a line to write down what you actually did.</p>
 
   <div class="stores">
-    <div class="badge">
+    <div class="store">
+      <a class="badge" href="https://apps.apple.com/app/id6803553337"
+         aria-label="Download Sit Still on the App Store">
       <svg width="21" height="25" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
         <path d="M12.15 8.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.2 3.09 3.79 3.04 1.52-.07 2.09-.99 3.93-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.15-1.69 1.63-3.32 1.66-3.41-.04-.02-3.18-1.23-3.22-4.86-.03-3.04 2.48-4.5 2.6-4.56-1.43-2.09-3.63-2.33-4.39-2.38-2-.15-3.68 1.1-4.61 1.1zM15.53 5.83c.84-1.02 1.4-2.43 1.25-3.83-1.21.05-2.67.8-3.54 1.82-.78.89-1.45 2.33-1.27 3.71 1.34.1 2.72-.69 3.56-1.7z"/>
       </svg>
@@ -111,8 +129,10 @@
         <span class="small">Download on the</span>
         <span class="big">App Store</span>
       </span>
+      </a>
     </div>
-    <div class="badge">
+    <div class="store">
+    <div class="badge badge--soon">
       <svg width="20" height="23" viewBox="0 0 20 24" aria-hidden="true">
         <path fill="#00A0FF" d="M.5 1.2C.2 1.5 0 2 0 2.7v18.6c0 .7.2 1.2.5 1.5l.1.1 10.4-10.4v-.2L.6 1.1l-.1.1z"/>
         <path fill="#FFBC00" d="M14.4 15.9l-3.4-3.5v-.2l3.5-3.5.1.1 4.1 2.4c1.2.7 1.2 1.8 0 2.5l-4.3 2.2z"/>
@@ -124,15 +144,17 @@
         <span class="big">Google Play</span>
       </span>
     </div>
+      <p class="soon">Coming soon</p>
+    </div>
   </div>
-  <p class="soon">Coming soon</p>
 
   <h2>What's in it</h2>
 
   <div class="feature">
     <h3>Nineteen illustrated rooms</h3>
-    <p>Seventeen permanent ones, free and open from the first launch, plus two
-    seasonal rooms that change every month. Each has its own recorded ambience,
+    <p>Seventeen permanent ones, free and open from the first launch, plus a
+    pair of seasonal rooms that come and go. Buy one with whiskers and it is
+    yours for good, long after its month is over. Each has its own recorded ambience,
     levelled so moving between rooms is never a lurch.</p>
   </div>
 
