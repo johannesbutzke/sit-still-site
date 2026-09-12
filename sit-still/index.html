@@ -66,6 +66,22 @@
   .card p:first-child{margin-top:0}
   .card p:last-child{margin-bottom:0}
   .feature{margin:1.6em 0}
+  /* The rooms themselves. Until now this page described nineteen illustrations
+     and showed none of them — and, as a side effect, gave Pinterest, iMessage
+     and every other "save this page" button nothing to take. */
+  .rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:1.4em 0 0}
+  .rooms figure{margin:0}
+  .rooms img{
+    display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;
+    background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  }
+  .rooms figcaption{margin-top:.5em;color:var(--muted);font-size:.88rem;line-height:1.45}
+  .rooms figcaption b{
+    display:block;color:var(--ink);font-family:Georgia,serif;
+    font-weight:400;font-size:1.02rem;margin-bottom:.1em;
+  }
+  @media (max-width:520px){ .rooms{grid-template-columns:1fr;gap:18px} }
+
   .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
   .feature p{margin:0;color:var(--muted)}
   .meta{color:var(--muted);font-size:.95rem}
@@ -174,6 +190,29 @@
     pair of seasonal rooms that come and go. Buy one with whiskers and it is
     yours for good, long after its month is over. Each has its own recorded ambience,
     levelled so moving between rooms is never a lurch.</p>
+  </div>
+
+  <div class="rooms">
+    <figure>
+      <img src="rooms/tea_room.jpg" width="640" height="960" loading="lazy"
+           alt="A Japanese tea room: shoji screens open onto a moss garden and koi pond, a low table with an iron teapot.">
+      <figcaption><b>The Tea Room</b>Kyoto, Japan. Tatami underfoot, a low table, and the kettle always just off the boil.</figcaption>
+    </figure>
+    <figure>
+      <img src="rooms/painters_attic.jpg" width="640" height="960" loading="lazy"
+           alt="A Paris attic studio: an open skylight over zinc rooftops, canvases stacked against the wall, an easel and paint tubes.">
+      <figcaption><b>The Painter&rsquo;s Attic</b>Paris, France. Six flights up, canvases stacked three deep, and the light doing all the work.</figcaption>
+    </figure>
+    <figure>
+      <img src="rooms/bookshop_loft.jpg" width="640" height="960" loading="lazy"
+           alt="A bookshop loft: shelves to the ceiling, a ladder on rails and a chaise longue under a tall window.">
+      <figcaption><b>The Bookshop Loft</b>Porto, Portugal. Shelves to the ceiling, a ladder on rails, and a chaise nobody&rsquo;s claimed.</figcaption>
+    </figure>
+    <figure>
+      <img src="rooms/stilt_house.jpg" width="640" height="960" loading="lazy"
+           alt="A stilt house over the water: the room open on one side to a busy river.">
+      <figcaption><b>The Stilt House</b>Mekong Delta, Vietnam. The whole room open to the water, and the water busy all day.</figcaption>
+    </figure>
   </div>
 
   <div class="feature">
