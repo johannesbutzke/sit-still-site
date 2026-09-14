@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sit Still &mdash; Focus Timer for iPhone</title>
-<meta name="description" content="Sit Still is a focus timer built around nineteen illustrated rooms, each with its own sound.">
+<title>Sit Still &mdash; Focus Timer</title>
+<meta name="description" content="Sit Still is a focus timer built around illustrated rooms, each with its own sound.">
 <!-- Pinterest domain verification. Claimed at the root, which covers every
      page under alteraapps.com; a claimed domain puts the account name and
      avatar on every Pin linking here, including other people's re-saves,
      and is what Rich Pins are validated against. -->
 <meta name="p:domain_verify" content="9cd7170beb92cd6d5e032733cb7f755a"/>
 <meta property="og:title" content="Sit Still &mdash; A quiet room to focus in">
-<meta property="og:description" content="Sit Still is a focus timer built around nineteen illustrated rooms, each with its own sound.">
+<meta property="og:description" content="Sit Still is a focus timer built around illustrated rooms, each with its own sound.">
 <!-- **article, not website, and that is for Pinterest.** An Article Rich Pin
      needs og:type=article plus a title, a description and an image; with
      og:type=website Pinterest validates nothing and the pin stays plain. The
@@ -127,9 +127,12 @@
   .badge .small{font-size:.74rem;letter-spacing:.01em}
   .badge .big{font-size:1.32rem;font-weight:500;letter-spacing:-.015em}
   p.soon{
-    color:var(--muted);font-size:.92rem;margin:.7em 0 0;
+    color:var(--muted);font-size:.92rem;margin:.6em 0 0;
     border:0;padding:0;background:none;text-align:center;
   }
+  /* The badges already end in a caption, so the rule under them does not need
+     a full section's worth of air above it. */
+  .stores + h2{margin-top:1.2em}
   @media (prefers-reduced-motion: reduce){
     a.badge{transition:none}
     a.badge:hover{transform:none}
@@ -182,11 +185,12 @@
   <h2>What's in it</h2>
 
   <div class="feature">
-    <h3>Nineteen illustrated rooms</h3>
-    <p>Seventeen permanent ones, free and open from the first launch, plus a
-    pair of seasonal rooms that come and go. Buy one with whiskers and it is
-    yours for good, long after its month is over. Each has its own recorded ambience,
-    levelled so moving between rooms is never a lurch.</p>
+    <h3>Illustrated rooms, and two new ones a month</h3>
+    <p>A permanent collection that keeps growing, plus a pair of seasonal rooms
+    that arrive at the start of a month and are gone at the end of it. Buy one
+    with whiskers and it is yours for good, long after its month is over. Each
+    room has its own recorded ambience, levelled so moving between rooms is
+    never a lurch.</p>
   </div>
 
   <div class="rooms">
@@ -220,6 +224,13 @@
   </div>
 
   <div class="feature">
+    <h3>Rules that run without you</h3>
+    <p>Put a set of apps away between two clock times on the days you choose, or
+    give them a fixed number of minutes a day and let them go until midnight once
+    that is spent. Set once, and it happens whether or not the app is open.</p>
+  </div>
+
+  <div class="feature">
     <h3>A bedtime lock</h3>
     <p>Choose a window and the same shield comes up on a schedule, so the phone
     stops being interesting at the hour you decided rather than the hour you
@@ -233,14 +244,38 @@
   </div>
 
   <div class="feature">
-    <h3>Cats</h3>
-    <p>Six companions, all free, picked on taste rather than earned. Focusing
-    pays whiskers, and whiskers buy the seasonal rooms and things for the cat to
-    wear. Nothing else costs anything.</p>
+    <h3>On the Home Screen</h3>
+    <p>The room you sit in as a widget, with the last seven days beside it, and a
+    second tile that moves through the whole collection an hour at a time. The
+    streak fits on the Lock Screen as well.</p>
   </div>
 
-  <p class="meta">Sit Still is for iPhone and requires iOS 17 or later. There is
-  no account, no sign-in, and it works with no connection at all.</p>
+  <div class="feature">
+    <h3>Cats</h3>
+    <p>A cat is asleep in every room, and which one is your choice &mdash; they are
+    picked on taste, never earned or unlocked. Focusing pays whiskers: two a
+    minute, and a little more past half an hour. They buy the seasonal rooms and
+    things for the cat to wear, and nothing about it is a gamble &mdash; every hat is
+    bought outright.</p>
+  </div>
+
+  <h2>What's free, and what Premium adds</h2>
+
+  <div class="card">
+    <p><b>Free:</b> two rooms and a cat, the countdown and open-ended timers,
+    the focus shield during a session, tasks, and the record with its monthly
+    look back.</p>
+    <p><b>Premium</b> opens the rest of the permanent rooms and every cat, adds
+    the pomodoro, the bedtime lock, focus rules and the widgets, and lets
+    whiskers buy things for the cat to wear. Monthly or yearly, cancelled from
+    the App Store whenever you like.</p>
+    <p>Seasonal rooms are the exception either way: they cost whiskers, a
+    subscription does not include them, and money never buys whiskers.</p>
+  </div>
+
+  <p class="meta">On iPhone, Sit Still needs iOS&nbsp;17 or later; an Android
+  version is being built. There is no account, no sign-in, and it works with no
+  connection at all.</p>
 
   <h2>Support and privacy</h2>
 
@@ -252,7 +287,7 @@
   </div>
 
   <footer>
-    Sit Still for iPhone. &copy; 2026 Altera Apps.
+    Sit Still. &copy; 2026 Altera Apps.
     <a href="../">All apps</a> &middot;
     <a href="support/">Support</a> &middot;
     <a href="privacy/">Privacy</a>
