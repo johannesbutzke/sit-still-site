@@ -103,21 +103,34 @@
   <h2>Common questions</h2>
 
   <h3>The room stops playing when I lock the screen</h3>
-  <p>Sound has to be on for a session to keep running in the background. With
-  room sound switched off, iOS suspends the app, and a countdown will not finish
-  or chime until you open it again. Settings&nbsp;&rarr;&nbsp;Audio has the switch.</p>
+  <p>It shouldn&rsquo;t &mdash; the room carries on with the screen locked, and the
+  session&rsquo;s clock carries on whether or not the room is making a sound, so a
+  countdown still finishes and still chimes with the sound switched off. If the
+  room went quiet mid&#8209;session, something interrupted it: a call, an alarm,
+  Siri, or plugging into a car. Opening the app puts it back.</p>
 
   <h3>The room sound stops my music</h3>
-  <p>It shouldn't &mdash; room sound is mixed under whatever else is playing rather
+  <p>It shouldn&rsquo;t &mdash; room sound is mixed under whatever else is playing rather
   than interrupting it, and it ignores the ring/silent switch. If it is louder
-  than you want it under music, Settings&nbsp;&rarr;&nbsp;Audio has a volume slider
+  than you want it under music, Settings&nbsp;&rarr;&nbsp;Sounds has a volume slider
   and a Listen button.</p>
+  <p><strong>If the music stops the moment a session starts, look at the focus
+  shield rather than the sound.</strong> Shielding an app does not just hide it
+  &mdash; iOS stops it running, and a music app that has been stopped stops
+  playing. Strict shields everything, and Whitelist shields everything you
+  haven&rsquo;t picked, so your music app needs to be on that list:
+  Settings&nbsp;&rarr;&nbsp;Focus shield&nbsp;&rarr;&nbsp;Whitelist, then Add
+  apps. Companionship blocks nothing at all. The same goes for a blocking rule or
+  the bedtime lock that happens to cover it &mdash; a rule running in the
+  background will stop music just as a session does.</p>
+  <p>The quick test: start a session on Companionship with the music playing. If
+  it keeps playing, the shield was the cause rather than the room.</p>
 
-  <h3>Blocked apps aren't being blocked</h3>
+  <h3>Blocked apps aren&rsquo;t being blocked</h3>
   <p>Check Settings&nbsp;&rarr;&nbsp;Focus shield: Companionship is the default and
   blocks nothing. Whitelist and Strict both need Screen Time access, which iOS
   asks for the first time you pick one. Screen Time cannot shield some system
-  apps, and a whitelist is capped at ten apps &mdash; websites keep Screen Time's
+  apps, and a whitelist is capped at ten apps &mdash; websites keep Screen Time&rsquo;s
   fifty &mdash; because past that the system stops honouring the list.</p>
 
   <h3>Apps are still blocked and no session is running</h3>
@@ -126,22 +139,74 @@
   with no session behind it. If you have deleted the app while a shield was up,
   reinstall it, open it once, and the shield comes down.</p>
 
-  <h3>The bedtime lock never fires</h3>
+  <h3>How do I block apps when I&rsquo;m not in a session?</h3>
+  <p>Settings&nbsp;&rarr;&nbsp;Focus shield&nbsp;&rarr;&nbsp;Blocking on a
+  schedule. A rule is one of two things. A <em>schedule</em> puts the apps you
+  choose away between two times, on the days you pick. A <em>time limit</em>
+  gives them so many minutes a day and then puts them away &mdash; until
+  tomorrow, or for a stretch you choose. Either way the rule runs whether or not
+  you ever open Sit Still that day.</p>
+  <p>Eight rules is the most the phone will hold, a rule covers up to 50 apps,
+  and a scheduled window has to be at least 15 minutes because iOS will not watch
+  a shorter one. Rules come with Premium. The bedtime lock is the same machinery
+  pointed at one window a night, and it keeps a screen of its own.</p>
+
+  <h3>A rule or the bedtime lock never fires</h3>
   <p>iOS refuses to monitor a window shorter than 15 minutes, and the start and
   end callbacks only arrive while the device is in use &mdash; a phone face-down at
-  22:30 gets its lock when it is next picked up.</p>
+  22:30 gets its lock when it is next picked up. Both also need Screen Time
+  access, and both say so on their own row when it is missing. A rule with no
+  apps chosen is armed and puts nothing away.</p>
+
+  <h3>I can&rsquo;t tell which apps I picked</h3>
+  <p>Tap <em>Expand</em> under the row of icons and it opens into a list with
+  names. It is there wherever apps are chosen &mdash; the session whitelist, a
+  blocking rule, and the bedtime lock&rsquo;s let-through list. Sit Still never
+  learns what you picked: iOS hands it a token it can draw and not read, which is
+  why the icons and the names are drawn by the system rather than by the app, and
+  why nothing about your choice can be sent anywhere.</p>
 
   <h3>My tasks and Reminders disagree</h3>
-  <p>The reminder wins on any conflict. Scope is Sit Still's own Reminders list
+  <p>The reminder wins on any conflict. Scope is Sit Still&rsquo;s own Reminders list
   plus reminders you deliberately linked; a reminder added to another list is not
   picked up. Deleting travels both ways &mdash; deleting a task deletes its reminder,
   and vice versa.</p>
 
   <h3>I left a session by accident and lost the time</h3>
-  <p>Leaving takes a deliberate 1.3-second hold precisely so it doesn't happen by
+  <p>Leaving takes a deliberate 1.3-second hold precisely so it doesn&rsquo;t happen by
   accident, and time left that way is not banked. Finishing early is different:
   an open-ended session, or a countdown paused past the first minute, banks what
   you did sit through.</p>
+
+  <h3>Can I change the pomodoro&rsquo;s 25&nbsp;/&nbsp;5&nbsp;/&nbsp;15?</h3>
+  <p>Yes. Settings&nbsp;&rarr;&nbsp;Timer&nbsp;&rarr;&nbsp;Pomodoro sets the
+  focus block, the short break and the long break a minute at a time &mdash; up
+  to two hours for a focus block and an hour for a break &mdash; and a reset row
+  appears underneath as soon as you are off the classic numbers. Hold the minus
+  or plus rather than tapping it and the number runs.</p>
+  <p>A longer break every fourth block is fixed, because that is the shape of the
+  method rather than a setting inside it. New lengths apply to the next session,
+  not the one already on the clock, so a block you are sitting through keeps the
+  numbers it began with. The explanation behind <em>Know more about Pomodoro</em>
+  on the Focus tab always reads out your own three, and says so when they are not
+  the classic ones.</p>
+
+  <h3>Can I start a session with Siri?</h3>
+  <p>&ldquo;Start a session in Sit Still&rdquo;, and the same for ending, pausing
+  and resuming. All four are in the Shortcuts app too, so a session can be one
+  step of an automation &mdash; starting when a Focus turns on, for instance. The
+  other direction is not possible: iOS will not let an app switch a Focus on or
+  quiet another app&rsquo;s notifications, and there is no way around that.</p>
+
+  <h3>Where are the widgets?</h3>
+  <p>Touch and hold the Home Screen, tap the <strong>+</strong>, and search for
+  Sit Still. There is one for the room you are sitting in with your recent days
+  under it, one for the collection that turns over an hour at a time, and three
+  shapes for your streak on the Lock Screen &mdash; the small ones also appear in
+  StandBy while the phone charges on its side.
+  Settings&nbsp;&rarr;&nbsp;Widgets&nbsp;&rarr;&nbsp;How to add them has the
+  same instructions with pictures. Widgets come with Premium; without it the tile
+  is there but locked.</p>
 
   <h3>How do I earn whiskers, and what are they for?</h3>
   <p>Two per minute of a completed session, ten more for a session of half an
@@ -160,7 +225,17 @@
 
   <h3>A seasonal room disappeared</h3>
   <p>Seasonal rooms rotate at the end of the month. One bought with whiskers
-  stays yours; the ones you didn't buy are replaced by the next two.</p>
+  stays yours for good; the ones you didn&rsquo;t buy are replaced by the next
+  two, and a room that has left cannot be bought afterwards.</p>
+
+  <h3>The monthly rooms are the wrong ones for the date</h3>
+  <p>The app checks the date against Apple&rsquo;s clock rather than your
+  phone&rsquo;s, so a phone set to the wrong day no longer opens a drop early or
+  hides one that is running. That check needs the network once; a device that has
+  been offline since its clock was changed can be out of step until it next has a
+  connection, and corrects itself when it does. The drop itself still turns over
+  at midnight where you are, so a room arrives in Auckland before it arrives in
+  Los Angeles.</p>
 
   <h3>Saving a room as wallpaper does nothing</h3>
   <p>Save room as wallpaper sits on the Rooms tab, beside the picture it saves,
