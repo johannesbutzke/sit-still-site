@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sit Still &mdash; Focus Timer</title>
-<meta name="description" content="Sit Still is a focus timer built around illustrated rooms, each with its own sound.">
+<meta name="description" content="A focus timer set in illustrated rooms, each with its own sound and a sleeping cat. For iPhone, iPad and Android.">
 <!-- Pinterest domain verification. Claimed at the root, which covers every
      page under alteraapps.com; a claimed domain puts the account name and
      avatar on every Pin linking here, including other people's re-saves,
      and is what Rich Pins are validated against. -->
 <meta name="p:domain_verify" content="9cd7170beb92cd6d5e032733cb7f755a"/>
 <meta property="og:title" content="Sit Still &mdash; A quiet room to focus in">
-<meta property="og:description" content="Sit Still is a focus timer built around illustrated rooms, each with its own sound.">
+<meta property="og:description" content="A focus timer set in illustrated rooms, each with its own sound and a sleeping cat. For iPhone, iPad and Android.">
 <!-- **article, not website, and that is for Pinterest.** An Article Rich Pin
      needs og:type=article plus a title, a description and an image; with
      og:type=website Pinterest validates nothing and the pin stays plain. The
@@ -81,6 +81,18 @@
     font-weight:400;font-size:1.02rem;margin-bottom:.1em;
   }
   @media (max-width:520px){ .rooms{grid-template-columns:1fr;gap:18px} }
+  /* One room as a tablet shows it: the whole painting, 16:10. */
+  .wide{margin:1.4em 0 0}
+  .wide img{
+    display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;
+    background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  }
+  .wide figcaption{margin-top:.5em;color:var(--muted);font-size:.88rem;line-height:1.45}
+  /* Features as a short list: a name and one line each. */
+  .features{list-style:none;padding:0;margin:1.2em 0}
+  .features li{margin:0 0 1em}
+  .features b{display:block;font-family:Georgia,serif;font-weight:400;font-size:1.12rem}
+  .features span{color:var(--muted)}
 
   .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
   .feature p{margin:0;color:var(--muted)}
@@ -147,10 +159,8 @@
   <h1>Sit Still</h1>
   <p class="lede">A quiet room to focus in.</p>
 
-  <p>Set a length, pick a room, and stay in it. The room fills the screen &mdash; a tea
-  house in Kyoto, an attic in Paris, a library in Vienna &mdash; with its own sound
-  playing underneath and a cat asleep somewhere in it. When the time is up you
-  get a few whiskers and a line to write down what you actually did.</p>
+  <p>Pick a room, set a length, and stay. Each room has its own sound and a
+  cat asleep in it. For iPhone, iPad and Android.</p>
 
   <div class="stores">
     <div class="store">
@@ -182,118 +192,74 @@
     </div>
   </div>
 
-  <h2>What's in it</h2>
+  <h2>Rooms</h2>
 
-  <div class="feature">
-    <h3>Illustrated rooms, and two new ones a month</h3>
-    <p>A permanent collection that keeps growing, plus a pair of seasonal rooms
-    that arrive at the start of a month and are gone at the end of it. Buy one
-    with whiskers and it is yours for good, long after its month is over. Each
-    room has its own recorded ambience, levelled so moving between rooms is
-    never a lurch.</p>
-  </div>
+  <p>A growing collection, plus two seasonal rooms each month that you can keep
+  with whiskers.</p>
 
   <div class="rooms">
     <figure>
       <img src="rooms/tea_room.jpg" width="640" height="960" loading="lazy"
            alt="A Japanese tea room: shoji screens open onto a moss garden and koi pond, a low table with an iron teapot.">
-      <figcaption><b>The Tea Room</b>Kyoto, Japan. Tatami underfoot, a low table, and the kettle always just off the boil.</figcaption>
+      <figcaption><b>The Tea Room</b>Kyoto, Japan</figcaption>
     </figure>
     <figure>
       <img src="rooms/painters_attic.jpg" width="640" height="960" loading="lazy"
            alt="A Paris attic studio: an open skylight over zinc rooftops, canvases stacked against the wall, an easel and paint tubes.">
-      <figcaption><b>The Painter&rsquo;s Attic</b>Paris, France. Six flights up, canvases stacked three deep, and the light doing all the work.</figcaption>
+      <figcaption><b>The Painter&rsquo;s Attic</b>Paris, France</figcaption>
     </figure>
     <figure>
       <img src="rooms/bookshop_loft.jpg" width="640" height="960" loading="lazy"
            alt="A bookshop loft: shelves to the ceiling, a ladder on rails and a chaise longue under a tall window.">
-      <figcaption><b>The Bookshop Loft</b>Porto, Portugal. Shelves to the ceiling, a ladder on rails, and a chaise nobody&rsquo;s claimed.</figcaption>
+      <figcaption><b>The Bookshop Loft</b>Porto, Portugal</figcaption>
     </figure>
     <figure>
       <img src="rooms/stilt_house.jpg" width="640" height="960" loading="lazy"
            alt="A stilt house over the water: the room open on one side to a busy river.">
-      <figcaption><b>The Stilt House</b>Mekong Delta, Vietnam. The whole room open to the water, and the water busy all day.</figcaption>
+      <figcaption><b>The Stilt House</b>Mekong Delta, Vietnam</figcaption>
     </figure>
   </div>
 
-  <div class="feature">
-    <h3>A focus shield, if you want one</h3>
-    <p>Three modes: Companionship blocks nothing, Whitelist lets a chosen set of
-    apps through, Strict blocks everything for the length of the session. Built on
-    Apple's own Screen Time frameworks.</p>
-  </div>
+  <figure class="wide">
+    <img src="rooms/crimson_library_wide.jpg" width="1320" height="825" loading="lazy"
+         alt="The Crimson Library in Vienna, as a wide painting: red bookshelves, a fire, a wing chair and rain on the window.">
+    <figcaption>On iPad and Android tablets, every room is a wide painting. The Crimson Library, Vienna.</figcaption>
+  </figure>
 
-  <div class="feature">
-    <h3>Rules that run without you</h3>
-    <p>Put a set of apps away between two clock times on the days you choose, or
-    give them a fixed number of minutes a day and let them go until midnight once
-    that is spent. Set once, and it happens whether or not the app is open.</p>
-  </div>
+  <h2>What&rsquo;s in it</h2>
 
-  <div class="feature">
-    <h3>A bedtime lock</h3>
-    <p>Choose a window and the same shield comes up on a schedule, so the phone
-    stops being interesting at the hour you decided rather than the hour you
-    give in.</p>
-  </div>
+  <ul class="features">
+    <li><b>Sound</b><span>Each room&rsquo;s own recording, or one of four songs.</span></li>
+    <li><b>Blocking during sessions</b><span>Block everything, everything but a few apps, or nothing.</span></li>
+    <li><b>Blocking rules</b><span>On a schedule, after a daily limit, or after too long in one go.</span></li>
+    <li><b>Bedtime lock</b><span>The same blocking, every night, at the hours you choose.</span></li>
+    <li><b>Hard mode</b><span>A rule that can&rsquo;t be switched off while it runs. For real emergencies, a weekly pass opens everything for an hour.</span></li>
+    <li><b>Tasks and a record</b><span>A task list, synced with Reminders on iPhone and iPad, and a record of the time you&rsquo;ve focused.</span></li>
+    <li><b>Cats and whiskers</b><span>Six cats to choose from. Focusing earns whiskers, which buy seasonal rooms and things for your cat to wear.</span></li>
+    <li><b>Widgets</b><span>Your room and your week on the Home Screen.</span></li>
+  </ul>
 
-  <div class="feature">
-    <h3>Hard mode, and one way out</h3>
-    <p>Put a rule or the bedtime lock in hard mode and it can&rsquo;t be switched
-    off or changed while it runs. Without hard mode, switching one off in the
-    middle takes twenty seconds of breathing with the cat first. And for the day
-    something really can&rsquo;t wait, an emergency pass opens everything for an
-    hour, once a week.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Tasks, and a record</h3>
-    <p>A task list that syncs both ways with Apple Reminders if you want it to,
-    and a plain chart of what you have actually sat through.</p>
-  </div>
-
-  <div class="feature">
-    <h3>On the Home Screen</h3>
-    <p>The room you sit in as a widget, with the last seven days beside it, and a
-    second tile that moves through the whole collection an hour at a time. The
-    streak fits on the Lock Screen as well.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Cats</h3>
-    <p>A cat is asleep in every room, and which one is your choice &mdash; they are
-    picked on taste, never earned or unlocked. Focusing pays whiskers: two a
-    minute, and a little more past half an hour. They buy the seasonal rooms,
-    things for the cat to wear, and an emergency pass after the first free one
-    &mdash; and nothing about it is a gamble: everything is bought outright.</p>
-  </div>
-
-  <h2>What's free, and what Premium adds</h2>
+  <h2>Free and Premium</h2>
 
   <div class="card">
-    <p><b>Free:</b> two rooms and a cat, the countdown and open-ended timers,
-    the focus shield during a session, tasks, and the record with its monthly
-    look back.</p>
-    <p><b>Premium</b> opens the rest of the permanent rooms and every cat, adds
-    the pomodoro, focus rules and the bedtime lock &mdash; with hard mode and the
-    emergency pass &mdash; and the widgets, and lets whiskers buy things for the
-    cat to wear. Monthly or yearly, cancelled from
-    the App Store whenever you like.</p>
-    <p>Seasonal rooms are the exception either way: they cost whiskers, a
-    subscription does not include them, and money never buys whiskers.</p>
+    <p><b>Free:</b> two rooms, one cat, the timer, blocking during sessions,
+    tasks and the record.</p>
+    <p><b>Premium</b> adds every room and cat, the pomodoro, blocking rules, the
+    bedtime lock, hard mode, widgets and cat accessories. Monthly or yearly.</p>
+    <p>Seasonal rooms cost whiskers for everyone, and money never buys
+    whiskers.</p>
   </div>
 
-  <p class="meta">On iPhone, Sit Still needs iOS&nbsp;17 or later; an Android
-  version is being built. There is no account, no sign-in, and it works with no
-  connection at all.</p>
+  <p class="meta">iPhone and iPad: iOS&nbsp;17 or later. Android: version&nbsp;12
+  or later. No account, and it works offline.</p>
 
   <h2>Support and privacy</h2>
 
   <div class="links">
-    <a href="support/"><strong>Support</strong><span>Common questions, and how to
-      reach a person</span></a>
-    <a href="privacy/"><strong>Privacy policy</strong><span>Short version: nothing
-      leaves your phone</span></a>
+    <a href="support/"><strong>Support</strong><span>Questions, and how to
+      reach us</span></a>
+    <a href="privacy/"><strong>Privacy policy</strong><span>Nothing leaves
+      your device</span></a>
   </div>
 
   <footer>

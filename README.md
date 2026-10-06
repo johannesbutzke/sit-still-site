@@ -1,2 +1,2 @@
 # sit-still-site
-Support, FAQ and privacy policy for Sit Still, a focus timer for iPhone and Android.
+Support, FAQ and privacy policy for Sit Still, a focus timer for iPhone, iPad and Android.
