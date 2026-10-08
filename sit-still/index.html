@@ -88,11 +88,19 @@
     background:var(--card);border:1px solid var(--rule);border-radius:10px;
   }
   .wide figcaption{margin-top:.5em;color:var(--muted);font-size:.88rem;line-height:1.45}
-  /* Features as a short list: a name and one line each. */
+  /* Features as a short list: an icon, a name and one line each. The icons
+     are Lucide (lucide.dev, ISC licence), inlined so the page loads nothing
+     extra; stroke and colour live here rather than on every <svg>. The 5px
+     drop centres a 22px icon on the first line of the Georgia name. */
   .features{list-style:none;padding:0;margin:1.2em 0}
-  .features li{margin:0 0 1em}
-  .features b{display:block;font-family:Georgia,serif;font-weight:400;font-size:1.12rem}
-  .features span{color:var(--muted)}
+  .features li{display:grid;grid-template-columns:22px 1fr;column-gap:14px;margin:0 0 1em}
+  .features .ico{
+    grid-row:1 / span 2;width:22px;height:22px;margin-top:5px;
+    color:var(--terracotta);fill:none;stroke:currentColor;stroke-width:1.75;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  .features b{grid-column:2;display:block;font-family:Georgia,serif;font-weight:400;font-size:1.12rem}
+  .features span{grid-column:2;color:var(--muted)}
 
   .feature h3{margin:0 0 .2em;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
   .feature p{margin:0;color:var(--muted)}
@@ -235,14 +243,22 @@
   <h2>What&rsquo;s in it</h2>
 
   <ul class="features">
-    <li><b>Sound</b><span>Each room&rsquo;s own recording, or one of four songs.</span></li>
-    <li><b>Blocking during sessions</b><span>Block everything, everything but a few apps, or nothing.</span></li>
-    <li><b>Blocking rules</b><span>On a schedule, after a daily limit, or after too long in one go.</span></li>
-    <li><b>Bedtime lock</b><span>The same blocking, every night, at the hours you choose.</span></li>
-    <li><b>Hard mode</b><span>A rule that can&rsquo;t be switched off while it runs. For real emergencies, a weekly pass opens everything for an hour.</span></li>
-    <li><b>Tasks and a record</b><span>A task list, synced with Reminders on iPhone and iPad, and a record of the time you&rsquo;ve focused.</span></li>
-    <li><b>Cats and whiskers</b><span>Six cats to choose from. Focusing earns whiskers, which buy seasonal rooms and things for your cat to wear.</span></li>
-    <li><b>Widgets</b><span>Your room and your week on the home screen.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+      <b>Sound</b><span>Each room&rsquo;s own recording, or one of four songs.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <b>Blocking during sessions</b><span>Block everything, everything but a few apps, or nothing.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/></svg>
+      <b>Blocking rules</b><span>On a schedule, after a daily limit, or after too long in one go.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <b>Bedtime lock</b><span>The same blocking, every night, at the hours you choose.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <b>Hard mode</b><span>A rule that can&rsquo;t be switched off while it runs. For real emergencies, a weekly pass opens everything for an hour.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+      <b>Tasks and a record</b><span>A task list, synced with Reminders on iPhone and iPad, and a record of the time you&rsquo;ve focused.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/></svg>
+      <b>Cats and whiskers</b><span>Six cats to choose from. Focusing earns whiskers, which buy seasonal rooms and things for your cat to wear.</span></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      <b>Widgets</b><span>Your room and your week on the home screen.</span></li>
   </ul>
 
   <h2>Free and Premium</h2>
