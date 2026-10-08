@@ -101,10 +101,12 @@
   }
   footer a{color:var(--muted)}
 
-  /* align-items:flex-start, not center: only one store carries a caption
-     underneath, and centring would push the live badge down to meet it.
-     The two stores split the text column between them, and drop to one
-     full-width badge each once the column gets too narrow to share. */
+  /* Both stores are live now, so neither carries a caption and the two
+     badges sit level. align-items:flex-start stays so a caption added under
+     one later (a store going quiet in a region, say) does not drag the other
+     down to meet it. The two stores split the text column between them, and
+     drop to one full-width badge each once the column gets too narrow to
+     share. */
   .stores{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin:2.2em 0 0}
   .store{display:flex;flex-direction:column;flex:1 1 240px;min-width:0}
   .badge{
@@ -130,9 +132,10 @@
     color:var(--muted);font-size:.92rem;margin:.6em 0 0;
     border:0;padding:0;background:none;text-align:center;
   }
-  /* The badges already end in a caption, so the rule under them does not need
-     a full section's worth of air above it. */
-  .stores + h2{margin-top:1.2em}
+  /* Less than a full section's worth of air above the rule: the badges are a
+     strong enough full stop on their own. 2em rather than the 1.2em this was
+     while the Play badge still ended in a "Coming soon" caption. */
+  .stores + h2{margin-top:2em}
   @media (prefers-reduced-motion: reduce){
     a.badge{transition:none}
     a.badge:hover{transform:none}
@@ -166,7 +169,8 @@
       </a>
     </div>
     <div class="store">
-    <div class="badge badge--soon">
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.sitstill"
+         aria-label="Get Sit Still on Google Play">
       <svg width="25" height="29" viewBox="0 0 20 24" aria-hidden="true">
         <path fill="#00A0FF" d="M.5 1.2C.2 1.5 0 2 0 2.7v18.6c0 .7.2 1.2.5 1.5l.1.1 10.4-10.4v-.2L.6 1.1l-.1.1z"/>
         <path fill="#FFBC00" d="M14.4 15.9l-3.4-3.5v-.2l3.5-3.5.1.1 4.1 2.4c1.2.7 1.2 1.8 0 2.5l-4.3 2.2z"/>
@@ -177,8 +181,7 @@
         <span class="small">Get it on</span>
         <span class="big">Google Play</span>
       </span>
-    </div>
-      <p class="soon">Coming soon</p>
+      </a>
     </div>
   </div>
 
@@ -219,8 +222,10 @@
   <div class="feature">
     <h3>A focus shield, if you want one</h3>
     <p>Three modes: Companionship blocks nothing, Whitelist lets a chosen set of
-    apps through, Strict blocks everything for the length of the session. Built on
-    Apple's own Screen Time frameworks.</p>
+    apps through, Strict blocks everything for the length of the session. On
+    iPhone it is built on Apple's own Screen Time frameworks; on Android, on two
+    permissions you switch on yourself in Android's own Settings, and can switch
+    off there again at any time.</p>
   </div>
 
   <div class="feature">
@@ -248,15 +253,18 @@
 
   <div class="feature">
     <h3>Tasks, and a record</h3>
-    <p>A task list that syncs both ways with Apple Reminders if you want it to,
-    and a plain chart of what you have actually sat through.</p>
+    <p>A task list, and a plain chart of what you have actually sat through. On
+    iPhone the list can sync both ways with Apple Reminders if you want it to;
+    Android has no Reminders to sync with, so there a morning notification can
+    read out what is due instead.</p>
   </div>
 
   <div class="feature">
-    <h3>On the Home Screen</h3>
-    <p>The room you sit in as a widget, with the last seven days beside it, and a
-    second tile that moves through the whole collection an hour at a time. The
-    streak fits on the Lock Screen as well.</p>
+    <h3>On the home screen</h3>
+    <p>The room you sit in as a widget, with the last seven days beside it, a
+    second tile that moves through the whole collection an hour at a time, and a
+    third for your streak. On iPhone the streak fits on the Lock Screen as
+    well.</p>
   </div>
 
   <div class="feature">
@@ -278,14 +286,14 @@
     the pomodoro, focus rules and the bedtime lock &mdash; with hard mode and the
     emergency pass &mdash; and the widgets, and lets whiskers buy things for the
     cat to wear. Monthly or yearly, cancelled from
-    the App Store whenever you like.</p>
+    the App Store or Google Play whenever you like.</p>
     <p>Seasonal rooms are the exception either way: they cost whiskers, a
     subscription does not include them, and money never buys whiskers.</p>
   </div>
 
-  <p class="meta">On iPhone, Sit Still needs iOS&nbsp;17 or later; an Android
-  version is being built. There is no account, no sign-in, and it works with no
-  connection at all.</p>
+  <p class="meta">Sit Still needs iOS&nbsp;17 or later on iPhone, and
+  Android&nbsp;12 or later on Android. There is no account, no sign-in, and it
+  works with no connection at all.</p>
 
   <h2>Support and privacy</h2>
 
